@@ -102,8 +102,8 @@ var featureOverlay = new ol.layer.Vector({
     }),
     style: [new ol.style.Style({
         stroke: new ol.style.Stroke({
-            color: '#f00',
-            width: 1
+            color: '#ffffff',
+            width: 3
         }),
         fill: new ol.style.Fill({
             color: 'rgba(255,0,0,0.1)'
@@ -555,4 +555,5 @@ document.addEventListener('DOMContentLoaded', function() {
     var attributionControl = document.getElementsByClassName('bottom-attribution')[0];
     if (attributionControl) {
         bottomRightContainerDiv.appendChild(attributionControl);
+
     }
