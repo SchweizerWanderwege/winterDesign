@@ -51,29 +51,55 @@
         <h4>Winterwanderwege</h4>
         <label for="colorWinter">Aussenfarbe:</label>
         <input type="color" id="colorWinter" value="#ce059c"><br>
-
+        
         <label for="colorWinterInner">Innenfarbe:</label>
         <input type="color" id="colorWinterInner" value="#ff84ff"><br>
-
+        
         <label for="opacityWinter">Transparenz:</label>
         <input type="range" id="opacityWinter" min="0" max="1" step="0.05" value="0.8">
         <input type="number" id="opacityValueWinter" min="0" max="1" step="0.05" value="0.8" style="width:60px;"><br>
-
-        <label for="innerCHM1">Innenlinie Best-of (px):</label>
-        <input type="range" id="innerCHM1" min="1" max="10" step="0.1" value="2">
-        <input type="number" id="innerCHM1Value" min="1" max="10" step="0.1" value="2" style="width:60px;"><br>
-
-        <label for="outerCHM1">Aussenlinie Best-of (px):</label>
-        <input type="range" id="outerCHM1" min="1" max="15" step="0.1" value="4">
-        <input type="number" id="outerCHM1Value" min="1" max="15" step="0.1" value="4" style="width:60px;"><br>
-
-        <label for="innerCHM0">Innenlinie Basisnetz (px):</label>
-        <input type="range" id="innerCHM0" min="1" max="10" step="0.1" value="1.5">
-        <input type="number" id="innerCHM0Value" min="1" max="10" step="0.1" value="1.5" style="width:60px;"><br>
-
-        <label for="outerCHM0">Aussenlinie Basisnetz (px):</label>
-        <input type="range" id="outerCHM0" min="1" max="15" step="0.1" value="3">
-        <input type="number" id="outerCHM0Value" min="1" max="15" step="0.1" value="3" style="width:60px;"><br>
+        
+        <!-- 3-column layout -->
+        <div style="display:grid; grid-template-columns: 1fr 1fr 1fr; gap:15px; margin-top:10px;">
+          <!-- Class 1 -->
+          <div>
+            <h5>Klasse 1 (nah)</h5>
+            <label>Innenlinie Best-of (px):</label>
+            <input type="number" id="ww_innerCHM1_class1" value="2" step="0.1"><br>
+            <label>Aussenlinie Best-of (px):</label>
+            <input type="number" id="ww_outerCHM1_class1" value="4" step="0.1"><br>
+            <label>Innenlinie Basisnetz (px):</label>
+            <input type="number" id="ww_innerCHM0_class1" value="1.5" step="0.1"><br>
+            <label>Aussenlinie Basisnetz (px):</label>
+            <input type="number" id="ww_outerCHM0_class1" value="3" step="0.1"><br>
+          </div>
+        
+          <!-- Class 2 -->
+          <div>
+            <h5>Klasse 2 (mittel)</h5>
+            <label>Innenlinie Best-of (px):</label>
+            <input type="number" id="ww_innerCHM1_class2" value="1.8" step="0.1"><br>
+            <label>Aussenlinie Best-of (px):</label>
+            <input type="number" id="ww_outerCHM1_class2" value="3.5" step="0.1"><br>
+            <label>Innenlinie Basisnetz (px):</label>
+            <input type="number" id="ww_innerCHM0_class2" value="1.2" step="0.1"><br>
+            <label>Aussenlinie Basisnetz (px):</label>
+            <input type="number" id="ww_outerCHM0_class2" value="2.5" step="0.1"><br>
+          </div>
+        
+          <!-- Class 3 -->
+          <div>
+            <h5>Klasse 3 (fern)</h5>
+            <label>Innenlinie Best-of (px):</label>
+            <input type="number" id="ww_innerCHM1_class3" value="1.2" step="0.1"><br>
+            <label>Aussenlinie Best-of (px):</label>
+            <input type="number" id="ww_outerCHM1_class3" value="2" step="0.1"><br>
+            <label>Innenlinie Basisnetz (px):</label>
+            <input type="number" id="ww_innerCHM0_class3" value="0.8" step="0.1"><br>
+            <label>Aussenlinie Basisnetz (px):</label>
+            <input type="number" id="ww_outerCHM0_class3" value="1.5" step="0.1"><br>
+          </div>
+        </div>
 
         <hr>
 
@@ -86,32 +112,58 @@
 
           <hr>
 
-          <h4>Schneeschuhwanderwege</h4>
+        <h4>Schneeschuhwanderwege</h4>
         <label for="colorSchnee">Aussenfarbe:</label>
         <input type="color" id="colorSchnee" value="#7f037f"><br>
-
+        
         <label for="colorSchneeInner">Innenfarbe:</label>
         <input type="color" id="colorSchneeInner" value="#cc33cc"><br>
-
+        
         <label for="opacitySchnee">Transparenz:</label>
         <input type="range" id="opacitySchnee" min="0" max="1" step="0.05" value="0.8">
         <input type="number" id="opacityValueSchnee" min="0" max="1" step="0.05" value="0.8" style="width:60px;"><br>
-
-        <label for="innerCHM1Schnee">Innenlinie Best-of (px):</label>
-        <input type="range" id="innerCHM1Schnee" min="1" max="10" step="0.1" value="2">
-        <input type="number" id="innerCHM1SchneeValue" min="1" max="10" step="0.1" value="2" style="width:60px;"><br>
-
-        <label for="outerCHM1Schnee">Aussenlinie Best-of (px):</label>
-        <input type="range" id="outerCHM1Schnee" min="1" max="15" step="0.1" value="4">
-        <input type="number" id="outerCHM1SchneeValue" min="1" max="15" step="0.1" value="4" style="width:60px;"><br>
-
-        <label for="innerCHM0Schnee">Innenlinie Basisnetz (px):</label>
-        <input type="range" id="innerCHM0Schnee" min="1" max="10" step="0.1" value="1.5">
-        <input type="number" id="innerCHM0SchneeValue" min="1" max="10" step="0.1" value="1.5" style="width:60px;"><br>
-
-        <label for="outerCHM0Schnee">Aussenlinie Basisnetz (px):</label>
-        <input type="range" id="outerCHM0Schnee" min="1" max="15" step="0.1" value="3">
-        <input type="number" id="outerCHM0SchneeValue" min="1" max="15" step="0.1" value="3" style="width:60px;"><br>
+        
+        <!-- 3-column layout -->
+        <div style="display:grid; grid-template-columns: 1fr 1fr 1fr; gap:15px; margin-top:10px;">
+          <!-- Class 1 -->
+          <div>
+            <h5>Klasse 1 (nah)</h5>
+            <label>Innenlinie Best-of (px):</label>
+            <input type="number" id="schnee_innerCHM1_class1" value="2" step="0.1"><br>
+            <label>Aussenlinie Best-of (px):</label>
+            <input type="number" id="schnee_outerCHM1_class1" value="4" step="0.1"><br>
+            <label>Innenlinie Basisnetz (px):</label>
+            <input type="number" id="schnee_innerCHM0_class1" value="1.5" step="0.1"><br>
+            <label>Aussenlinie Basisnetz (px):</label>
+            <input type="number" id="schnee_outerCHM0_class1" value="3" step="0.1"><br>
+          </div>
+        
+          <!-- Class 2 -->
+          <div>
+            <h5>Klasse 2 (mittel)</h5>
+            <label>Innenlinie Best-of (px):</label>
+            <input type="number" id="schnee_innerCHM1_class2" value="1.8" step="0.1"><br>
+            <label>Aussenlinie Best-of (px):</label>
+            <input type="number" id="schnee_outerCHM1_class2" value="3.5" step="0.1"><br>
+            <label>Innenlinie Basisnetz (px):</label>
+            <input type="number" id="schnee_innerCHM0_class2" value="1.2" step="0.1"><br>
+            <label>Aussenlinie Basisnetz (px):</label>
+            <input type="number" id="schnee_outerCHM0_class2" value="2.5" step="0.1"><br>
+          </div>
+        
+          <!-- Class 3 -->
+          <div>
+            <h5>Klasse 3 (fern)</h5>
+            <label>Innenlinie Best-of (px):</label>
+            <input type="number" id="schnee_innerCHM1_class3" value="1.2" step="0.1"><br>
+            <label>Aussenlinie Best-of (px):</label>
+            <input type="number" id="schnee_outerCHM1_class3" value="2" step="0.1"><br>
+            <label>Innenlinie Basisnetz (px):</label>
+            <input type="number" id="schnee_innerCHM0_class3" value="0.8" step="0.1"><br>
+            <label>Aussenlinie Basisnetz (px):</label>
+            <input type="number" id="schnee_outerCHM0_class3" value="1.5" step="0.1"><br>
+          </div>
+        </div>
 
         <hr>          
 
@@ -292,5 +344,6 @@
         </script>
     </body>
 </html>
+
 
 
