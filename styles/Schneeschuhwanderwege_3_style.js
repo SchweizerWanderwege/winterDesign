@@ -63,39 +63,39 @@ var style_Schneeschuhwanderwege_3 = function(feature, resolution){
     return style;
 };
 function interactiveSchneeStyle(feature, resolution) {
-    let originalStyles = style_Schneeschuhwanderwege_3(feature, resolution);
+    // Pick resolution class
+    let clazz;
+    if (resolution < 5) {
+        clazz = "class1";
+    } else if (resolution < 20) {
+        clazz = "class2";
+    } else {
+        clazz = "class3";
+    }
 
-    let colorOuter = document.getElementById('colorSchnee')?.value || "#7f037f";
-    let colorInner = document.getElementById('colorSchneeInner')?.value || "#cc33cc";
-    let opacity = parseFloat(document.getElementById('opacitySchnee')?.value || 0.8);
+    let isCHM = feature.get("IsCHM");
 
-    // Read width values
-    let innerCHM1 = parseFloat(document.getElementById('innerCHM1Schnee')?.value);
-    let outerCHM1 = parseFloat(document.getElementById('outerCHM1Schnee')?.value);
-    let innerCHM0 = parseFloat(document.getElementById('innerCHM0Schnee')?.value);
-    let outerCHM0 = parseFloat(document.getElementById('outerCHM0Schnee')?.value);
+    // Get widths from the corresponding inputs
+    let outerWidth = parseFloat(document.getElementById(`schnee_outerCHM${isCHM}_${clazz}`).value);
+    let innerWidth = parseFloat(document.getElementById(`schnee_innerCHM${isCHM}_${clazz}`).value);
 
-    let adjustedStyles = originalStyles.map((s, index) => {
-        // Determine width based on IsCHM and inner/outer
-        let width;
-        if (feature.get("IsCHM") === 1) {
-            width = index === 0 ? outerCHM1 : innerCHM1;
-        } else {
-            width = index === 0 ? outerCHM0 : innerCHM0;
-        }
+    let colorOuter = document.getElementById('colorSchnee').value;
+    let colorInner = document.getElementById('colorSchneeInner').value;
+    let opacity = parseFloat(document.getElementById('opacitySchnee').value);
 
-        return new ol.style.Style({
+    return [
+        new ol.style.Style({
             stroke: new ol.style.Stroke({
-                color: index === 0 ? `rgba(${hexToRgb(colorOuter)}, ${opacity})`
-                                   : `rgba(${hexToRgb(colorInner)}, ${opacity})`,
-                width: width,
-                lineCap: s.getStroke().getLineCap(),
-                lineJoin: s.getStroke().getLineJoin(),
-                lineDash: s.getStroke().getLineDash()
-            }),
-            text: s.getText()
-        });
-    });
-
-    return adjustedStyles;
+                color: hexToRgba(colorOuter, opacity),
+                width: outerWidth
+            })
+        }),
+        new ol.style.Style({
+            stroke: new ol.style.Stroke({
+                color: hexToRgba(colorInner, opacity),
+                width: innerWidth
+            })
+        })
+    ];
 }
+
