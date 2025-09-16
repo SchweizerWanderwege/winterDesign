@@ -244,7 +244,7 @@ function onPointerMove(evt) {
                     highlightStyle = new ol.style.Style({
                         image: new ol.style.Circle({
                             fill: new ol.style.Fill({
-                                color: "#ffff00"
+                                color: "#ffffff"
                             }),
                             radius: radius
                         })
@@ -255,16 +255,16 @@ function onPointerMove(evt) {
 
                     highlightStyle = new ol.style.Style({
                         stroke: new ol.style.Stroke({
-                            color: '#ffff00',
+                            color: '#ffffff',
                             lineDash: null,
-                            width: featureWidth
+                            width: 3
                         })
                     });
 
                 } else {
                     highlightStyle = new ol.style.Style({
                         fill: new ol.style.Fill({
-                            color: '#ffff00'
+                            color: '#ffffff'
                         })
                     })
                 }
@@ -557,3 +557,4 @@ document.addEventListener('DOMContentLoaded', function() {
         bottomRightContainerDiv.appendChild(attributionControl);
 
     }
+
